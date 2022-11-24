@@ -24,12 +24,10 @@
         openTabs(el) {
           const btnTarget = el.currentTarget;
           const { country } = btnTarget.dataset;
-          // eslint-disable-next-line array-callback-return
-          this.tabLinks.map(link => {
+          this.tabLinks.forEach(link => {
             link.classList.remove('active');
           });
-          // eslint-disable-next-line array-callback-return
-          this.tabContent.map(tab => {
+          this.tabContent.forEach(tab => {
             tab.classList.remove('active');
           });
           document.querySelector(`#${country}`).classList.add('active');
